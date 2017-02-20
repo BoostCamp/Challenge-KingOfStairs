@@ -8,20 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		1B8B28581E5B4D050067CBE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B28571E5B4D050067CBE3 /* AppDelegate.swift */; };
-		1B8B285A1E5B4D050067CBE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B28591E5B4D050067CBE3 /* ViewController.swift */; };
 		1B8B285D1E5B4D050067CBE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B285B1E5B4D050067CBE3 /* Main.storyboard */; };
 		1B8B285F1E5B4D050067CBE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B285E1E5B4D050067CBE3 /* Assets.xcassets */; };
 		1B8B28621E5B4D050067CBE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B28601E5B4D050067CBE3 /* LaunchScreen.storyboard */; };
+		1B8B286A1E5B4DB00067CBE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B28691E5B4DB00067CBE3 /* GoogleService-Info.plist */; };
+		1B8B286C1E5B4F2D0067CBE3 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B286B1E5B4F2D0067CBE3 /* LogInViewController.swift */; };
+		CBF49A73BA08BFE31E2BA650 /* Pods_KingOfStairs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9FABA90300A199E1CE929C /* Pods_KingOfStairs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B8B28541E5B4D050067CBE3 /* KingOfStairs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingOfStairs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8B28571E5B4D050067CBE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B8B28591E5B4D050067CBE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1B8B285C1E5B4D050067CBE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B8B285E1E5B4D050067CBE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B8B28611E5B4D050067CBE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B8B28631E5B4D050067CBE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B8B28691E5B4DB00067CBE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1B8B286B1E5B4F2D0067CBE3 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		1B8B286E1E5B549B0067CBE3 /* KingOfStairs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KingOfStairs.entitlements; sourceTree = "<group>"; };
+		365DBBC1E8B568A3A7270DA2 /* Pods-KingOfStairs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KingOfStairs.release.xcconfig"; path = "Pods/Target Support Files/Pods-KingOfStairs/Pods-KingOfStairs.release.xcconfig"; sourceTree = "<group>"; };
+		3C9FABA90300A199E1CE929C /* Pods_KingOfStairs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KingOfStairs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3F30EAE7B6B7A20B9AA78C /* Pods-KingOfStairs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KingOfStairs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KingOfStairs/Pods-KingOfStairs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF49A73BA08BFE31E2BA650 /* Pods_KingOfStairs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +48,8 @@
 			children = (
 				1B8B28561E5B4D050067CBE3 /* KingOfStairs */,
 				1B8B28551E5B4D050067CBE3 /* Products */,
+				7C8CABF9261FA076DB10CC49 /* Pods */,
+				A1C348005938A97E58463679 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +64,41 @@
 		1B8B28561E5B4D050067CBE3 /* KingOfStairs */ = {
 			isa = PBXGroup;
 			children = (
+				1B8B286E1E5B549B0067CBE3 /* KingOfStairs.entitlements */,
 				1B8B28571E5B4D050067CBE3 /* AppDelegate.swift */,
-				1B8B28591E5B4D050067CBE3 /* ViewController.swift */,
+				1B8B286D1E5B4F940067CBE3 /* Controller */,
 				1B8B285B1E5B4D050067CBE3 /* Main.storyboard */,
 				1B8B285E1E5B4D050067CBE3 /* Assets.xcassets */,
 				1B8B28601E5B4D050067CBE3 /* LaunchScreen.storyboard */,
 				1B8B28631E5B4D050067CBE3 /* Info.plist */,
+				1B8B28691E5B4DB00067CBE3 /* GoogleService-Info.plist */,
 			);
 			path = KingOfStairs;
+			sourceTree = "<group>";
+		};
+		1B8B286D1E5B4F940067CBE3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1B8B286B1E5B4F2D0067CBE3 /* LogInViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7C8CABF9261FA076DB10CC49 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F30EAE7B6B7A20B9AA78C /* Pods-KingOfStairs.debug.xcconfig */,
+				365DBBC1E8B568A3A7270DA2 /* Pods-KingOfStairs.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A1C348005938A97E58463679 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C9FABA90300A199E1CE929C /* Pods_KingOfStairs.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +108,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B8B28661E5B4D050067CBE3 /* Build configuration list for PBXNativeTarget "KingOfStairs" */;
 			buildPhases = (
+				02E4BC34A612197772CCBE9C /* [CP] Check Pods Manifest.lock */,
 				1B8B28501E5B4D050067CBE3 /* Sources */,
 				1B8B28511E5B4D050067CBE3 /* Frameworks */,
 				1B8B28521E5B4D050067CBE3 /* Resources */,
+				587A9F160E7E259C456EC912 /* [CP] Embed Pods Frameworks */,
+				DD51EA9D2B24C09936E83456 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,8 +136,13 @@
 				TargetAttributes = {
 					1B8B28531E5B4D050067CBE3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4P2H4G47JA;
+						DevelopmentTeam = D644Q544WC;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -125,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B8B28621E5B4D050067CBE3 /* LaunchScreen.storyboard in Resources */,
+				1B8B286A1E5B4DB00067CBE3 /* GoogleService-Info.plist in Resources */,
 				1B8B285F1E5B4D050067CBE3 /* Assets.xcassets in Resources */,
 				1B8B285D1E5B4D050067CBE3 /* Main.storyboard in Resources */,
 			);
@@ -132,12 +178,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02E4BC34A612197772CCBE9C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		587A9F160E7E259C456EC912 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KingOfStairs/Pods-KingOfStairs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD51EA9D2B24C09936E83456 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KingOfStairs/Pods-KingOfStairs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1B8B28501E5B4D050067CBE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B8B285A1E5B4D050067CBE3 /* ViewController.swift in Sources */,
+				1B8B286C1E5B4F2D0067CBE3 /* LogInViewController.swift in Sources */,
 				1B8B28581E5B4D050067CBE3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,9 +353,11 @@
 		};
 		1B8B28671E5B4D050067CBE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA3F30EAE7B6B7A20B9AA78C /* Pods-KingOfStairs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4P2H4G47JA;
+				CODE_SIGN_ENTITLEMENTS = KingOfStairs/KingOfStairs.entitlements;
+				DEVELOPMENT_TEAM = D644Q544WC;
 				INFOPLIST_FILE = KingOfStairs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BoostCampAmericano.KingOfStairs;
@@ -272,9 +368,11 @@
 		};
 		1B8B28681E5B4D050067CBE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 365DBBC1E8B568A3A7270DA2 /* Pods-KingOfStairs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4P2H4G47JA;
+				CODE_SIGN_ENTITLEMENTS = KingOfStairs/KingOfStairs.entitlements;
+				DEVELOPMENT_TEAM = D644Q544WC;
 				INFOPLIST_FILE = KingOfStairs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BoostCampAmericano.KingOfStairs;
@@ -302,6 +400,7 @@
 				1B8B28681E5B4D050067CBE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

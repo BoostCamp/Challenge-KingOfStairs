@@ -50,8 +50,14 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>프로필 사진을 등록하세요</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSMotionUsageDescription</key>
+	<string>도전계단왕이 여러분의 운동량을 기록합니다.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>도전계단왕이 당신의 위치 정보에 접근하려고 합니다.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -7,16 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B00466C1E5D48EB0081C60E /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00466B1E5D48EB0081C60E /* Badge.swift */; };
+		1B00466E1E5D495A0081C60E /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00466D1E5D495A0081C60E /* BadgeCollectionViewCell.swift */; };
+		1B0046701E5D49C70081C60E /* BadgeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00466F1E5D49C70081C60E /* BadgeCollectionViewController.swift */; };
+		1B0046721E5D4B540081C60E /* BadgeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0046711E5D4B540081C60E /* BadgeDetailViewController.swift */; };
+		1B0DB6E71E5E622B006EA8D5 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DB6E61E5E622B006EA8D5 /* RankingTableViewCell.swift */; };
+		1B0DB6E91E5E6331006EA8D5 /* RankingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DB6E81E5E6331006EA8D5 /* RankingTableViewController.swift */; };
+		1B0DB6EB1E5E64DC006EA8D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DB6EA1E5E64DC006EA8D5 /* User.swift */; };
+		1B1117EB1E5E7D7200DE25A2 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1117EA1E5E7D7200DE25A2 /* HeaderViewController.swift */; };
+		1B1117F31E5E96F300DE25A2 /* ExcerciseDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1117F21E5E96F300DE25A2 /* ExcerciseDataTableViewController.swift */; };
+		1B1117F51E5EB08A00DE25A2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1117F41E5EB08A00DE25A2 /* DetailViewController.swift */; };
+		1B16A0781E5C3E60009CB5E5 /* Uitilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16A0771E5C3E60009CB5E5 /* Uitilities.swift */; };
+		1B16A07A1E5C59B8009CB5E5 /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16A0791E5C59B8009CB5E5 /* Geotification.swift */; };
+		1B20D2AF1E5BC001008FB8F0 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B20D2AE1E5BC001008FB8F0 /* UserInfoViewController.swift */; };
+		1B20D2B11E5BC7C5008FB8F0 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B20D2B01E5BC7C5008FB8F0 /* PeopleViewController.swift */; };
+		1B20D2B31E5BE0EE008FB8F0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B20D2B21E5BE0EE008FB8F0 /* DataController.swift */; };
+		1B4DD3011E60013C0064E7AE /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4DD3001E60013C0064E7AE /* Building.swift */; };
+		1B4DD3051E60247A0064E7AE /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4DD3041E60247A0064E7AE /* CustomCalloutView.swift */; };
+		1B4DD3071E602D2A0064E7AE /* callOutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B4DD3061E602D2A0064E7AE /* callOutView.xib */; };
+		1B4DD3091E604AEF0064E7AE /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4DD3081E604AEF0064E7AE /* LogViewController.swift */; };
+		1B4DD30B1E6059180064E7AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4DD30A1E6059180064E7AE /* Constants.swift */; };
+		1B4DD30D1E6067400064E7AE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4DD30C1E6067400064E7AE /* MainViewController.swift */; };
+		1B4DD3111E60785F0064E7AE /* PeopleHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4DD3101E60785F0064E7AE /* PeopleHeadView.swift */; };
+		1B4DD3141E6078D30064E7AE /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4DD3131E6078D30064E7AE /* PeopleTableViewCell.swift */; };
 		1B8B28581E5B4D050067CBE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B28571E5B4D050067CBE3 /* AppDelegate.swift */; };
 		1B8B285D1E5B4D050067CBE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B285B1E5B4D050067CBE3 /* Main.storyboard */; };
 		1B8B285F1E5B4D050067CBE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B285E1E5B4D050067CBE3 /* Assets.xcassets */; };
 		1B8B28621E5B4D050067CBE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B28601E5B4D050067CBE3 /* LaunchScreen.storyboard */; };
 		1B8B286A1E5B4DB00067CBE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B28691E5B4DB00067CBE3 /* GoogleService-Info.plist */; };
-		1B8B286C1E5B4F2D0067CBE3 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B286B1E5B4F2D0067CBE3 /* LogInViewController.swift */; };
+		1BBAE1651E5D946B0035CE2A /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAE1641E5D946B0035CE2A /* GeoViewController.swift */; };
+		1BBAE1671E5DA3F80035CE2A /* TestLocations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1BBAE1661E5DA3F80035CE2A /* TestLocations.gpx */; };
+		1BBAE1691E5DC90E0035CE2A /* Kcl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAE1681E5DC90E0035CE2A /* Kcl.swift */; };
+		1BBAE16F1E5DF4000035CE2A /* AdPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAE16E1E5DF4000035CE2A /* AdPageViewController.swift */; };
+		1BBAE1711E5E046B0035CE2A /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAE1701E5E046B0035CE2A /* AdViewController.swift */; };
 		CBF49A73BA08BFE31E2BA650 /* Pods_KingOfStairs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9FABA90300A199E1CE929C /* Pods_KingOfStairs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B00466B1E5D48EB0081C60E /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		1B00466D1E5D495A0081C60E /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
+		1B00466F1E5D49C70081C60E /* BadgeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewController.swift; sourceTree = "<group>"; };
+		1B0046711E5D4B540081C60E /* BadgeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeDetailViewController.swift; sourceTree = "<group>"; };
+		1B0DB6E61E5E622B006EA8D5 /* RankingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
+		1B0DB6E81E5E6331006EA8D5 /* RankingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingTableViewController.swift; sourceTree = "<group>"; };
+		1B0DB6EA1E5E64DC006EA8D5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1B1117EA1E5E7D7200DE25A2 /* HeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
+		1B1117F21E5E96F300DE25A2 /* ExcerciseDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcerciseDataTableViewController.swift; sourceTree = "<group>"; };
+		1B1117F41E5EB08A00DE25A2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1B16A0771E5C3E60009CB5E5 /* Uitilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uitilities.swift; sourceTree = "<group>"; };
+		1B16A0791E5C59B8009CB5E5 /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geotification.swift; sourceTree = "<group>"; };
+		1B20D2AE1E5BC001008FB8F0 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		1B20D2B01E5BC7C5008FB8F0 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		1B20D2B21E5BE0EE008FB8F0 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		1B4DD3001E60013C0064E7AE /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		1B4DD3041E60247A0064E7AE /* CustomCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
+		1B4DD3061E602D2A0064E7AE /* callOutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = callOutView.xib; sourceTree = "<group>"; };
+		1B4DD3081E604AEF0064E7AE /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		1B4DD30A1E6059180064E7AE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1B4DD30C1E6067400064E7AE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1B4DD3101E60785F0064E7AE /* PeopleHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleHeadView.swift; sourceTree = "<group>"; };
+		1B4DD3131E6078D30064E7AE /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		1B8B28541E5B4D050067CBE3 /* KingOfStairs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingOfStairs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8B28571E5B4D050067CBE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B8B285C1E5B4D050067CBE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,8 +74,12 @@
 		1B8B28611E5B4D050067CBE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B8B28631E5B4D050067CBE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B8B28691E5B4DB00067CBE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		1B8B286B1E5B4F2D0067CBE3 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		1B8B286E1E5B549B0067CBE3 /* KingOfStairs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KingOfStairs.entitlements; sourceTree = "<group>"; };
+		1BBAE1641E5D946B0035CE2A /* GeoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
+		1BBAE1661E5DA3F80035CE2A /* TestLocations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TestLocations.gpx; sourceTree = "<group>"; };
+		1BBAE1681E5DC90E0035CE2A /* Kcl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kcl.swift; sourceTree = "<group>"; };
+		1BBAE16E1E5DF4000035CE2A /* AdPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPageViewController.swift; sourceTree = "<group>"; };
+		1BBAE1701E5E046B0035CE2A /* AdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
 		365DBBC1E8B568A3A7270DA2 /* Pods-KingOfStairs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KingOfStairs.release.xcconfig"; path = "Pods/Target Support Files/Pods-KingOfStairs/Pods-KingOfStairs.release.xcconfig"; sourceTree = "<group>"; };
 		3C9FABA90300A199E1CE929C /* Pods_KingOfStairs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KingOfStairs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3F30EAE7B6B7A20B9AA78C /* Pods-KingOfStairs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KingOfStairs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KingOfStairs/Pods-KingOfStairs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -43,6 +97,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B16A0761E5C3E42009CB5E5 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1BBAE1661E5DA3F80035CE2A /* TestLocations.gpx */,
+				1B0DB6EA1E5E64DC006EA8D5 /* User.swift */,
+				1B16A0771E5C3E60009CB5E5 /* Uitilities.swift */,
+				1B16A0791E5C59B8009CB5E5 /* Geotification.swift */,
+				1B00466B1E5D48EB0081C60E /* Badge.swift */,
+				1BBAE1681E5DC90E0035CE2A /* Kcl.swift */,
+				1B4DD30A1E6059180064E7AE /* Constants.swift */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		1B1B39FC1E5B78C8007211AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B20D2B21E5BE0EE008FB8F0 /* DataController.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1B1B39FD1E5B78D0007211AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B4DD3121E6078960064E7AE /* Cell */,
+				1B4DD3041E60247A0064E7AE /* CustomCalloutView.swift */,
+				1B4DD3101E60785F0064E7AE /* PeopleHeadView.swift */,
+				1B4DD3001E60013C0064E7AE /* Building.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1B4DD3121E6078960064E7AE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1B00466D1E5D495A0081C60E /* BadgeCollectionViewCell.swift */,
+				1B4DD3131E6078D30064E7AE /* PeopleTableViewCell.swift */,
+				1B0DB6E61E5E622B006EA8D5 /* RankingTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		1B8B284B1E5B4D050067CBE3 = {
 			isa = PBXGroup;
 			children = (
@@ -65,11 +162,15 @@
 			isa = PBXGroup;
 			children = (
 				1B8B286E1E5B549B0067CBE3 /* KingOfStairs.entitlements */,
-				1B8B28571E5B4D050067CBE3 /* AppDelegate.swift */,
+				1B1B39FC1E5B78C8007211AC /* Model */,
 				1B8B286D1E5B4F940067CBE3 /* Controller */,
-				1B8B285B1E5B4D050067CBE3 /* Main.storyboard */,
+				1B1B39FD1E5B78D0007211AC /* View */,
+				1B16A0761E5C3E42009CB5E5 /* SupportingFiles */,
+				1B8B28571E5B4D050067CBE3 /* AppDelegate.swift */,
 				1B8B285E1E5B4D050067CBE3 /* Assets.xcassets */,
+				1B8B285B1E5B4D050067CBE3 /* Main.storyboard */,
 				1B8B28601E5B4D050067CBE3 /* LaunchScreen.storyboard */,
+				1B4DD3061E602D2A0064E7AE /* callOutView.xib */,
 				1B8B28631E5B4D050067CBE3 /* Info.plist */,
 				1B8B28691E5B4DB00067CBE3 /* GoogleService-Info.plist */,
 			);
@@ -79,7 +180,19 @@
 		1B8B286D1E5B4F940067CBE3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1B8B286B1E5B4F2D0067CBE3 /* LogInViewController.swift */,
+				1B00466F1E5D49C70081C60E /* BadgeCollectionViewController.swift */,
+				1B4DD3081E604AEF0064E7AE /* LogViewController.swift */,
+				1B0046711E5D4B540081C60E /* BadgeDetailViewController.swift */,
+				1B20D2AE1E5BC001008FB8F0 /* UserInfoViewController.swift */,
+				1B20D2B01E5BC7C5008FB8F0 /* PeopleViewController.swift */,
+				1BBAE1641E5D946B0035CE2A /* GeoViewController.swift */,
+				1B4DD30C1E6067400064E7AE /* MainViewController.swift */,
+				1BBAE16E1E5DF4000035CE2A /* AdPageViewController.swift */,
+				1B1117F21E5E96F300DE25A2 /* ExcerciseDataTableViewController.swift */,
+				1BBAE1701E5E046B0035CE2A /* AdViewController.swift */,
+				1B0DB6E81E5E6331006EA8D5 /* RankingTableViewController.swift */,
+				1B1117EA1E5E7D7200DE25A2 /* HeaderViewController.swift */,
+				1B1117F41E5EB08A00DE25A2 /* DetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -170,8 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B8B28621E5B4D050067CBE3 /* LaunchScreen.storyboard in Resources */,
+				1B4DD3071E602D2A0064E7AE /* callOutView.xib in Resources */,
 				1B8B286A1E5B4DB00067CBE3 /* GoogleService-Info.plist in Resources */,
 				1B8B285F1E5B4D050067CBE3 /* Assets.xcassets in Resources */,
+				1BBAE1671E5DA3F80035CE2A /* TestLocations.gpx in Resources */,
 				1B8B285D1E5B4D050067CBE3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,8 +346,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B8B286C1E5B4F2D0067CBE3 /* LogInViewController.swift in Sources */,
+				1B4DD30B1E6059180064E7AE /* Constants.swift in Sources */,
+				1B4DD30D1E6067400064E7AE /* MainViewController.swift in Sources */,
+				1B20D2B31E5BE0EE008FB8F0 /* DataController.swift in Sources */,
+				1B0DB6E91E5E6331006EA8D5 /* RankingTableViewController.swift in Sources */,
+				1B1117F51E5EB08A00DE25A2 /* DetailViewController.swift in Sources */,
+				1B4DD3091E604AEF0064E7AE /* LogViewController.swift in Sources */,
+				1BBAE1651E5D946B0035CE2A /* GeoViewController.swift in Sources */,
+				1B0DB6E71E5E622B006EA8D5 /* RankingTableViewCell.swift in Sources */,
+				1B00466C1E5D48EB0081C60E /* Badge.swift in Sources */,
+				1B16A0781E5C3E60009CB5E5 /* Uitilities.swift in Sources */,
+				1BBAE1711E5E046B0035CE2A /* AdViewController.swift in Sources */,
+				1B4DD3051E60247A0064E7AE /* CustomCalloutView.swift in Sources */,
+				1B16A07A1E5C59B8009CB5E5 /* Geotification.swift in Sources */,
+				1B1117EB1E5E7D7200DE25A2 /* HeaderViewController.swift in Sources */,
+				1B0DB6EB1E5E64DC006EA8D5 /* User.swift in Sources */,
+				1BBAE16F1E5DF4000035CE2A /* AdPageViewController.swift in Sources */,
+				1B4DD3111E60785F0064E7AE /* PeopleHeadView.swift in Sources */,
+				1B0046701E5D49C70081C60E /* BadgeCollectionViewController.swift in Sources */,
+				1B1117F31E5E96F300DE25A2 /* ExcerciseDataTableViewController.swift in Sources */,
+				1B4DD3141E6078D30064E7AE /* PeopleTableViewCell.swift in Sources */,
+				1B20D2B11E5BC7C5008FB8F0 /* PeopleViewController.swift in Sources */,
+				1B20D2AF1E5BC001008FB8F0 /* UserInfoViewController.swift in Sources */,
+				1B4DD3011E60013C0064E7AE /* Building.swift in Sources */,
 				1B8B28581E5B4D050067CBE3 /* AppDelegate.swift in Sources */,
+				1BBAE1691E5DC90E0035CE2A /* Kcl.swift in Sources */,
+				1B0046721E5D4B540081C60E /* BadgeDetailViewController.swift in Sources */,
+				1B00466E1E5D495A0081C60E /* BadgeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

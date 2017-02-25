@@ -15,9 +15,13 @@ class RankingTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let udata = DataController.sharedInstance().userData
-        let pickedPlace = DataController.sharedInstance().selectedPlace
-        userData = DataController.sharedInstance().filterByBuilding(data: udata, selectedPlace: pickedPlace)
+        userData = DataController.sharedInstance().filterByBuilding(data: udata, selectedPlace: DataController.sharedInstance().selectedPlace)
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

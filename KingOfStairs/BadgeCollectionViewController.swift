@@ -30,9 +30,9 @@ class BadgeCollectionViewController: UICollectionViewController, UIViewControlle
 
         todayDate.text = dataControllerAccess.today
         
-        userSmallImage.layer.cornerRadius = userSmallImage.frame.size.width / 2
-        userSmallImage.clipsToBounds = true
-        userSmallImage.contentMode = .scaleAspectFit
+        todayKcl.text = DataController.sharedInstance().kclCalculator() + " kcl"
+        
+        monthlyKcl.setTitle("\(Double(DataController.sharedInstance().monthlySum())! * 7)" + " kcl", for: .normal)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,13 +42,6 @@ class BadgeCollectionViewController: UICollectionViewController, UIViewControlle
             let vc = segue.destination as! BadgeDetailViewController
             vc.badge = badge
         }
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        todayKcl.text = DataController.sharedInstance().kclCalculator() + " kcl"
-        
-        monthlyKcl.setTitle("\(Double(DataController.sharedInstance().monthlySum())! * 7)" + " kcl", for: .normal)
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

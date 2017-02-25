@@ -78,6 +78,12 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         loadAllGeotifications()
     
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        todayKcl.text = DataController.sharedInstance().kclCalculator() + " kcl"
+        
+        totlaKcl.setTitle("\(Double(DataController.sharedInstance().monthlySum())! * 7)" + " kcl", for: .normal)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -95,9 +101,6 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         else if CLLocationManager.authorizationStatus() == .authorizedAlways {
             locationManager.startUpdatingLocation()
         }
-        todayKcl.text = DataController.sharedInstance().kclCalculator() + " kcl"
-        
-        totlaKcl.setTitle("\(Double(DataController.sharedInstance().monthlySum())! * 7)" + " kcl", for: .normal)
     }
     
     
@@ -221,6 +224,8 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         return annotationView
     }
     
+    var selectedPlace = ""
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if view.annotation is MKUserLocation
         {
@@ -233,9 +238,22 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         calloutView.layer.cornerRadius = calloutView.frame.size.width / 2
         calloutView.clipsToBounds = true
         calloutView.layer.borderWidth = 2
-        calloutView.buildingName.text = "test"
-        calloutView.userName.text = "김태선"
-        calloutView.userProfile.image = UIImage(named: "Park")
+        
+        
+        
+        let data = DataController.sharedInstance().userData
+        if let annotation = view.annotation?.title {
+            if let place = annotation {
+                selectedPlace = place
+            }
+        }
+        print("-------------\(selectedPlace)")
+        
+        let sortedData = DataController.sharedInstance().filterByBuilding(data: data, selectedPlace: selectedPlace)
+        print("----------------------\(sortedData)")
+        calloutView.buildingName.text = selectedPlace
+        calloutView.userName.text = sortedData[0].name
+        calloutView.userProfile.image = sortedData[0].userImage
         
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
         view.addSubview(calloutView)
@@ -253,8 +271,9 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func longpress(gestureRecognizer: UIGestureRecognizer) {
         if gestureRecognizer.state == UIGestureRecognizerState.began {
+            DataController.sharedInstance().selectedPlace = selectedPlace
             showAlert("해당 건물에서 계단왕에 도전하시겠습니까?")
-            print("longpress-----------------------")
+            print("longpress----------------------- location selected!")
         }
     }
 }

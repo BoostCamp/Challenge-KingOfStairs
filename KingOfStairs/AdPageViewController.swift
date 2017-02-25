@@ -29,8 +29,7 @@ class AdPageViewController: UIPageViewController {
             scrollToViewController(initialViewController)
         }
         
-        AdDelegate?.AdPageViewController(self,
-                                                     didUpdatePageCount: orderedViewControllers.count)
+        AdDelegate?.AdPageViewController(self, didUpdatePageCount: orderedViewControllers.count)
     }
     
     func scrollToNextViewController() {

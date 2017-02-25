@@ -30,6 +30,7 @@
 		1B4DD30D1E6067400064E7AE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4DD30C1E6067400064E7AE /* MainViewController.swift */; };
 		1B4DD3111E60785F0064E7AE /* PeopleHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4DD3101E60785F0064E7AE /* PeopleHeadView.swift */; };
 		1B4DD3141E6078D30064E7AE /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4DD3131E6078D30064E7AE /* PeopleTableViewCell.swift */; };
+		1B4DD3161E60F73E0064E7AE /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4DD3151E60F73E0064E7AE /* FeedTableViewCell.swift */; };
 		1B8B28581E5B4D050067CBE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B28571E5B4D050067CBE3 /* AppDelegate.swift */; };
 		1B8B285D1E5B4D050067CBE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B285B1E5B4D050067CBE3 /* Main.storyboard */; };
 		1B8B285F1E5B4D050067CBE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B285E1E5B4D050067CBE3 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		1B4DD30C1E6067400064E7AE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1B4DD3101E60785F0064E7AE /* PeopleHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleHeadView.swift; sourceTree = "<group>"; };
 		1B4DD3131E6078D30064E7AE /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		1B4DD3151E60F73E0064E7AE /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		1B8B28541E5B4D050067CBE3 /* KingOfStairs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingOfStairs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8B28571E5B4D050067CBE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B8B285C1E5B4D050067CBE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				1B00466D1E5D495A0081C60E /* BadgeCollectionViewCell.swift */,
+				1B4DD3151E60F73E0064E7AE /* FeedTableViewCell.swift */,
 				1B4DD3131E6078D30064E7AE /* PeopleTableViewCell.swift */,
 				1B0DB6E61E5E622B006EA8D5 /* RankingTableViewCell.swift */,
 			);
@@ -355,6 +358,7 @@
 				1BBAE1651E5D946B0035CE2A /* GeoViewController.swift in Sources */,
 				1B0DB6E71E5E622B006EA8D5 /* RankingTableViewCell.swift in Sources */,
 				1B00466C1E5D48EB0081C60E /* Badge.swift in Sources */,
+				1B4DD3161E60F73E0064E7AE /* FeedTableViewCell.swift in Sources */,
 				1B16A0781E5C3E60009CB5E5 /* Uitilities.swift in Sources */,
 				1BBAE1711E5E046B0035CE2A /* AdViewController.swift in Sources */,
 				1B4DD3051E60247A0064E7AE /* CustomCalloutView.swift in Sources */,

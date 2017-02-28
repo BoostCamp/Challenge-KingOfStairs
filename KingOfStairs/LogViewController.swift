@@ -36,6 +36,7 @@ class LogViewController: UIViewController {
             } else {
                 print("TS: Successfully authenticated with Facebook")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                self.returnUserProfileImage(accessToken: FBSDKAccessToken.current().tokenString as NSString)
                 self.firebaseAuth(credential)
             }
         }
@@ -55,4 +56,12 @@ class LogViewController: UIViewController {
         })
     }
     
+    func returnUserProfileImage(accessToken: NSString) {
+        var userID = accessToken as NSString
+        var facebookProfileUrl = NSURL(string: "http://graph.facebook.com/\(userID)/picture?type=large")
+        
+        if let data = NSData(contentsOf: facebookProfileUrl! as URL) {
+            DataController.sharedInstance().currentUserImage = UIImage(data: data as Data)
+        }
+    }
 }

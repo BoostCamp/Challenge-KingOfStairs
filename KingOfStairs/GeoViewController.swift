@@ -20,6 +20,8 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var todayDate: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var totlaKcl: UIButton!
+    @IBOutlet weak var rankingColelctionView: UICollectionView!
+    
     
     let locationManager = CLLocationManager()
     var geotifications = [Geotification]()
@@ -28,15 +30,27 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var startFloor = 0
     var currentFloor = 0
     
+    override func loadView() {
+        super.loadView()
+        print("point1")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var check = -1
+        mapView.zoomToUserLocation()
         
-        if check == -1 {
-            mapView.zoomToUserLocation()
-            check = 1
-        }
+        userSmallImage.image = DataController.sharedInstance().currentUserImage
+        
+        rankingColelctionView.delegate = self
+        rankingColelctionView.dataSource = self
+        rankingColelctionView.isHidden = true
+        
+        let layout = rankingColelctionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.scrollDirection = .horizontal
+        
+        rankingColelctionView.backgroundColor = UIColor(white: 1, alpha: 0.0)
+        rankingColelctionView.showsHorizontalScrollIndicator = false
         
         let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(GeoViewController.longpress(gestureRecognizer:)))
         
@@ -61,7 +75,7 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         let dataControllerAccess = DataController.sharedInstance()
         
-        todayDate.text = dataControllerAccess.today
+        todayDate.text = DataController.sharedInstance().getTodayDate()
         
         userSmallImage.layer.cornerRadius = userSmallImage.frame.size.width / 2
         userSmallImage.clipsToBounds = true
@@ -76,18 +90,16 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
         }
         loadAllGeotifications()
-    
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        todayKcl.text = DataController.sharedInstance().kclCalculator() + " kcl"
-        
+        todayKcl.text = String(DataController.sharedInstance().kclCalculator())
         totlaKcl.setTitle("\(Double(DataController.sharedInstance().monthlySum())! * 7)" + " kcl", for: .normal)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         
         // status is not determined
         if CLLocationManager.authorizationStatus() == .notDetermined {
@@ -153,21 +165,41 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     // MARK: - CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        showAlert("\(region.identifier)에서 계단왕에 도전하시겠습니까?")
-        if CMPedometer.isFloorCountingAvailable() {
+        showAlertForEntering("\(region.identifier)에 들어왔습니다")
+        //        if CMPedometer.isFloorCountingAvailable() {
+        //            pedometerEventManager.startUpdates(from: NSDate() as Date, withHandler: { (data, error) in
+        //                guard let activityData = data, error == nil else {
+        //                    return
+        //                }
+        //                if let currentFloors = activityData.floorsAscended as? Int {
+        //
+        //                    DispatchQueue.main.sync {
+        //                        self.startFloor = currentFloors
+        //                        self.countingLabel.text = String(self.startFloor)
+        //                    }
+        //                }
+        //            })
+        //        } else {
+        //            print("Your device is not available for counting floors")
+        //        }
+        if CMPedometer.isStepCountingAvailable() {
             pedometerEventManager.startUpdates(from: NSDate() as Date, withHandler: { (data, error) in
                 guard let activityData = data, error == nil else {
                     return
                 }
-                if let currentFloors = activityData.floorsAscended as? Int {
-                    
+                if let currentSteps = activityData.numberOfSteps as? Int {
+                    var data = ""
                     DispatchQueue.main.sync {
-                        self.startFloor = currentFloors
+                        self.todayKcl.text = String(DataController.sharedInstance().kclCalculator() - (DataController.sharedInstance().todaySum() + Double(currentSteps * 7))) + " kcl"
+                        if let data = self.todayKcl.text as? Int{
+                            DataController.sharedInstance().currentData = data
+                        }
+                        print(self.todayKcl.text)
+                        
+                        print(DataController.sharedInstance().currentData)
                     }
                 }
             })
-        } else {
-            print("Your device is not available for counting floors")
         }
         if CMPedometer.isPedometerEventTrackingAvailable() {
             pedometerEventManager.startEventUpdates(handler: { (event, error) in
@@ -175,7 +207,6 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     if event?.type == CMPedometerEventType.resume {
                         self.currentFloor = self.startFloor
                     } else if event?.type == CMPedometerEventType.pause {
-                        
                     }
                 })
             })
@@ -183,12 +214,25 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        showAlert("\(region.identifier)에서 벗어났습니다!")
+        showAlertForEntering("\(region.identifier)에서 벗어났습니다!")
     }
     
     func showAlert(_ title: String) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            DataController.sharedInstance().selectedPlace = self.selectedPlace
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "NO", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertForEntering(_ title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            DataController.sharedInstance().selectedPlace = self.selectedPlace
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
@@ -239,6 +283,8 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         calloutView.clipsToBounds = true
         calloutView.layer.borderWidth = 2
         
+        let views2 = Bundle.main.loadNibNamed("BuildingCallOutView", owner: nil, options: nil)
+        let calloutView1 = views2?[0] as! CustomBuildingCallOutView
         
         
         let data = DataController.sharedInstance().userData
@@ -251,12 +297,15 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         let sortedData = DataController.sharedInstance().filterByBuilding(data: data, selectedPlace: selectedPlace)
         print("----------------------\(sortedData)")
-        calloutView.buildingName.text = selectedPlace
         calloutView.userName.text = sortedData[0].name
         calloutView.userProfile.image = sortedData[0].userImage
+        calloutView1.buildingName.text = selectedPlace
         
-        calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
+        
+        calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52 - 30)
+        calloutView1.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52 + 35)
         view.addSubview(calloutView)
+        view.addSubview(calloutView1)
         mapView.setCenter((view.annotation?.coordinate)!, animated: true)
     }
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
@@ -271,12 +320,50 @@ class GeoViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func longpress(gestureRecognizer: UIGestureRecognizer) {
         if gestureRecognizer.state == UIGestureRecognizerState.began {
-            DataController.sharedInstance().selectedPlace = selectedPlace
             showAlert("해당 건물에서 계단왕에 도전하시겠습니까?")
-            print("longpress----------------------- location selected!")
         }
     }
 }
+
+
+extension GeoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return DataController.sharedInstance().userData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingCell", for: indexPath) as! RankingCollectionViewCell
+        
+        cell.layer.cornerRadius = cell.frame.size.width / 2
+        cell.layer.borderWidth = 1
+        
+        //        let userData = DataController.sharedInstance().userData
+        //        let location = DataController.sharedInstance().selectedPlace
+        //        let sortedData = DataController.sharedInstance().filterByBuilding(data: userData, selectedPlace: location)
+        
+        cell.userImage.image = DataController.sharedInstance().userData[indexPath.row].userImage
+        cell.smallRankingImage.image = UIImage(named: "\(indexPath.row)")
+        cell.smallRankingImage.clipsToBounds = false
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 90, height: 90)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+}
+
 
 
 

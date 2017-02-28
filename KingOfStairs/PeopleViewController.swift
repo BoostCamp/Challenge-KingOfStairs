@@ -21,7 +21,8 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var totlaKcl: UIButton!
     @IBOutlet weak var feedNumber: UILabel!
     @IBOutlet weak var textfield: UITextField!
-
+    
+    var userData = [User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         
-        todayDate.text = DataController.sharedInstance().today
+        todayDate.text = DataController.sharedInstance().getTodayDate()
         
         totlaKcl.setTitle("\(Double(DataController.sharedInstance().monthlySum())! * 7)" + " kcl", for: .normal)
 
@@ -41,12 +42,16 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewWillAppear(animated)
         let data = DataController.sharedInstance().userData
         let selectedPlace = DataController.sharedInstance().selectedPlace
+        let udata = DataController.sharedInstance().userData
+        userData = DataController.sharedInstance().filterByBuilding(data: udata, selectedPlace: DataController.sharedInstance().selectedPlace)
+        tableView.reloadData()
         
-        todayKcl.text = DataController.sharedInstance().kclCalculator() + " kcl"
+        todayKcl.text = String(DataController.sharedInstance().kclCalculator()) + " kcl"
         KingProfile.image = DataController.sharedInstance().filterByBuilding(data: data, selectedPlace: selectedPlace)[0].userImage
         userName.text = DataController.sharedInstance().filterByBuilding(data: data, selectedPlace: selectedPlace)[0].name
         userComment.text = DataController.sharedInstance().filterByBuilding(data: data, selectedPlace: selectedPlace)[0].userComment
     }
+
 
     
     @IBAction func logOut(_ sender: Any) {
@@ -63,11 +68,20 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return userData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "myCell") as! FeedTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! FeedTableViewCell
+        
+        cell.profileImg.layer.cornerRadius = cell.profileImg.frame.size.width / 2
+        cell.profileImg.clipsToBounds = true
+        cell.profileImg.image = userData[indexPath.row].userImage
+        cell.caption.text = userData[indexPath.row].userComment
+        cell.username.text = userData[indexPath.row].name
+        cell.feedNumber.text = String(Int(arc4random_uniform(6) + 1))
+        
+        return cell
 
     }
     

@@ -45,7 +45,7 @@ class RankingTableViewController: UITableViewController {
         if indexPath.row <= 2 {
             cell.userRanking.image = UIImage(named: "\(indexPath.row)")
         } else {
-            cell.userRanking.image = UIImage(named: "Star")
+            cell.userRanking.image = UIImage(named: "noRanker")
         }
         cell.comment.text = userData[indexPath.row].userComment
         

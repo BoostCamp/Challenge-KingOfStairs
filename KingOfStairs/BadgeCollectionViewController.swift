@@ -28,9 +28,9 @@ class BadgeCollectionViewController: UICollectionViewController, UIViewControlle
         }
         let dataControllerAccess = DataController.sharedInstance()
 
-        todayDate.text = dataControllerAccess.today
+        todayDate.text = DataController.sharedInstance().getTodayDate()
         
-        todayKcl.text = DataController.sharedInstance().kclCalculator() + " kcl"
+        todayKcl.text = String(DataController.sharedInstance().kclCalculator()) + " kcl"
         
         monthlyKcl.setTitle("\(Double(DataController.sharedInstance().monthlySum())! * 7)" + " kcl", for: .normal)
     }

@@ -13,6 +13,5 @@ class CustomCalloutView: MKAnnotationView {
     
     @IBOutlet weak var userProfile: UIImageView!
     @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var buildingName: UILabel!
 
 }

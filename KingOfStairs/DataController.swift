@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FBSDKLoginKit
 
 class DataController: NSObject {
     
@@ -19,18 +20,45 @@ class DataController: NSObject {
         User(name: "최은주", userImage: UIImage(named: "Pak")!, kclPoint: 4795, userComment: "오늘 하루 힘드네요.", place: "메리츠타워"),
         User(name: "김효수", userImage: UIImage(named: "Kim")!, kclPoint: 54, userComment: "마지막까지 화이팅!", place: "메리츠타워"),
         User(name: "김태선", userImage: UIImage(named: "Park")!, kclPoint: 1304, userComment: "오늘 하루는 어떠셨나요? 다들 퇴근까지 화이팅이에요", place: "메리츠타워"),
-        User(name: "이효종", userImage: UIImage(named: "Lee")!, kclPoint: 479, userComment: "조금만 더하면 초롱님 따라 잡을 수 있을 듯! 후래아아입", place: "메리츠타워"),
-        User(name: "김호선", userImage: UIImage(named: "Choi")!, kclPoint: 3612, userComment: "오늘도 화이팅팅", place: "메리츠타워"),
-        User(name: "이현승", userImage: UIImage(named: "Park")!, kclPoint: 4795, userComment: "오늘 하루는 어떠셨나요? 다들 퇴근까지 화이팅이에요", place: "삼성"),
-        User(name: "오나미", userImage: UIImage(named: "Lee")!, kclPoint: 4321, userComment: "조금만 더하면 초롱님 따라 잡을 수 있을 듯! 후래아아입", place: "삼성"),
-        User(name: "오닥우", userImage: UIImage(named: "Choi")!, kclPoint: 3612, userComment: "오늘도 화이팅팅", place: "삼성"),
-        User(name: "김호선", userImage: UIImage(named: "Choi")!, kclPoint: 123, userComment: "오늘도 화이팅팅", place: "test"),
+        User(name: "이효종", userImage: UIImage(named: "Lee")!, kclPoint: 479, userComment: "조금만 더하면 초롱님 따라 잡을 수 있을 듯! 후래아아입", place: "판교"),
+        User(name: "김호선", userImage: UIImage(named: "Choi")!, kclPoint: 3612, userComment: "오늘도 화이팅팅", place: "판교"),
+        User(name: "이현승", userImage: UIImage(named: "Park")!, kclPoint: 4795, userComment: "오늘 하루는 어떠셨나요? 다들 퇴근까지 화이팅이에요", place: "우림라이온스"),
+        User(name: "오나미", userImage: UIImage(named: "Lee")!, kclPoint: 4321, userComment: "조금만 더하면 초롱님 따라 잡을 수 있을 듯! 후래아아입", place: "판교넥스트"),
+        User(name: "오닥우", userImage: UIImage(named: "Choi")!, kclPoint: 3612, userComment: "오늘도 화이팅팅", place: "판교넥스트"),
+        User(name: "김호선", userImage: UIImage(named: "Choi")!, kclPoint: 123, userComment: "오늘도 화이팅팅", place: "우림라이온스"),
         User(name: "이현승", userImage: UIImage(named: "Park")!, kclPoint: 532, userComment: "오늘 하루는 어떠셨나요? 다들 퇴근까지 화이팅이에요", place: "test"),
         User(name: "오나미", userImage: UIImage(named: "Lee")!, kclPoint: 4321, userComment: "조금만 더하면 초롱님 따라 잡을 수 있을 듯! 후래아아입", place: "test"),
-        User(name: "오닥우", userImage: UIImage(named: "Choi")!, kclPoint: 1234, userComment: "오늘도 화이팅팅", place: "test")
+        User(name: "오나미", userImage: UIImage(named: "Lee")!, kclPoint: 4321, userComment: "조금만 더하면 초롱님 따라 잡을 수 있을 듯! 후래아아입", place: "삼성"),
+        User(name: "User1", userImage: UIImage(named: "Choi")!, kclPoint: 1234, userComment: "1", place: "아이디어팩토리"),
+        User(name: "User2", userImage: UIImage(named: "Choi")!, kclPoint: 12, userComment: "2", place: "아이디어팩토리"),
+        User(name: "User3", userImage: UIImage(named: "Choi")!, kclPoint: 32, userComment: "3", place: "아이디어팩토리"),
+        User(name: "User4", userImage: UIImage(named: "Choi")!, kclPoint: 12, userComment: "4", place: "아이디어팩토리"),
+        User(name: "링고스타", userImage: UIImage(named: "Ling")!, kclPoint: 2800, userComment: "코더스 하이 만세", place: "판교넥스트"),
+        User(name: "최은주", userImage: UIImage(named: "Pak")!, kclPoint: 4795, userComment: "오늘 하루 힘드네요.", place: "판교넥스트"),
+        User(name: "김효수", userImage: UIImage(named: "Kim")!, kclPoint: 54, userComment: "마지막까지 화이팅!", place: "판교넥스트"),
+        User(name: "김태선", userImage: UIImage(named: "Park")!, kclPoint: 1304, userComment: "오늘 하루는 어떠셨나요? 다들 퇴근까지 화이팅이에요", place: "판교넥스트"),
+        User(name: "이효종", userImage: UIImage(named: "Lee")!, kclPoint: 479, userComment: "조금만 더하면 초롱님 따라 잡을 수 있을 듯! 후래아아입", place: "판교넥스트"),
+        User(name: "김호선", userImage: UIImage(named: "Choi")!, kclPoint: 3612, userComment: "오늘도 화이팅팅", place: "판교넥스트"),
+        User(name: "이현승", userImage: UIImage(named: "Park")!, kclPoint: 4795, userComment: "오늘 하루는 어떠셨나요? 다들 퇴근까지 화이팅이에요", place: "판교넥스트"),
+        User(name: "오나미", userImage: UIImage(named: "Lee")!, kclPoint: 4321, userComment: "조금만 더하면 초롱님 따라 잡을 수 있을 듯! 후래아아입", place: "판교넥스트"),
+        User(name: "오닥우", userImage: UIImage(named: "Choi")!, kclPoint: 3612, userComment: "오늘도 화이팅팅", place: "판교넥스트"),
+        User(name: "김호선", userImage: UIImage(named: "Choi")!, kclPoint: 123, userComment: "오늘도 화이팅팅", place: "판교넥스트"),
+        User(name: "이현승", userImage: UIImage(named: "Park")!, kclPoint: 532, userComment: "오늘 하루는 어떠셨나요? 다들 퇴근까지 화이팅이에요", place: "판교넥스트"),
+        User(name: "오나미", userImage: UIImage(named: "Lee")!, kclPoint: 4321, userComment: "조금만 더하면 초롱님 따라 잡을 수 있을 듯! 후래아아입", place: "판교넥스트"),
+        User(name: "오나미", userImage: UIImage(named: "Lee")!, kclPoint: 4321, userComment: "조금만 더하면 초롱님 따라 잡을 수 있을 듯! 후래아아입", place: "판교넥스트"),
+        User(name: "User1", userImage: UIImage(named: "Choi")!, kclPoint: 1234, userComment: "1", place: "판교넥스트"),
+        User(name: "User2", userImage: UIImage(named: "Choi")!, kclPoint: 12, userComment: "2", place: "판교넥스트"),
+        User(name: "User3", userImage: UIImage(named: "Choi")!, kclPoint: 32, userComment: "3", place: "판교넥스트"),
+        User(name: "User4", userImage: UIImage(named: "Choi")!, kclPoint: 12, userComment: "4", place: "판교넥스트"),
     ]
     
     var selectedPlace = ""
+    var currentData = 0
+    
+    func makeCurrentUser() -> User {
+        let currentUser = User(name: "User", userImage: UIImage(named: "MyInfo")!, kclPoint: 0, userComment: "안녕하세요", place: selectedPlace)
+        return currentUser
+    }
     
     func filterByBuilding(data: [User], selectedPlace location: String) -> [User] {
         
@@ -44,8 +72,7 @@ class DataController: NSObject {
         }
         return ascendantData()
     }
-    
-    
+    var currentUserImage = UIImage(named: "LIng")
     
     func getBuildingName() -> String {
         var userBuilding = ""
@@ -83,12 +110,30 @@ class DataController: NSObject {
             Kcl(floors: 24, time: "21:20"),
             Kcl(floors: 12, time: "22:12")
         ],
-        "2월 25일" : [
-            Kcl(floors: 11, time: "13:00")
-        ]
     ]
     
-    var today = "2월 25일"
+    func getTodayDate() -> String{
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        
+        var currentYear = ""
+        var currentMonth = ""
+        var currentDay = ""
+        
+        if let year = components.year {
+            currentYear = String(year)
+        }
+        if let month = components.month {
+            currentMonth = String(month)
+        }
+        if let day = components.day {
+            currentDay = String(day)
+        }
+        
+        return "\(currentMonth)월 \(currentDay)일"
+    }
     
     func monthlySum() -> String {
         var monthlyKcl = 0
@@ -103,7 +148,7 @@ class DataController: NSObject {
     
     func todaySum() -> Double {
         var todayKcl = 0
-        if let todayData = excerciseData[today] {
+        if let todayData = excerciseData[DataController.sharedInstance().getTodayDate()] {
             for i in 0..<todayData.count {
                 todayKcl += todayData[i].floors
             }
@@ -111,19 +156,23 @@ class DataController: NSObject {
         return Double(todayKcl)
     }
     
-    func kclCalculator() -> String {
+    func kclCalculator() -> Double {
         var data = 0.00
         if let currentkcl = goalKcl {
-            data = currentkcl - (todaySum() * 7)
+            data = currentkcl - (todaySum() * 7) - Double(currentData * 7)
         }
         
-        return String(data)
+        return data
     }
     
     var locations = [
         "메리츠타워":["longitude": 127.028526 ,"latitude": 37.497000, "radius": 50.00, "identifier": "메리츠타워"],
         "삼성":["longitude": 127.026927 ,"latitude": 37.496762, "radius": 50.00, "identifier": "삼성"],
-        "test":["longitude": 127.029107 ,"latitude": 37.497760, "radius": 20.00, "identifier": "test"]
+        "test":["longitude": 127.029107 ,"latitude": 37.497760, "radius": 20.00, "identifier": "test"],
+        "우림라이온스":["longitude": 126.882788 ,"latitude": 37.496762, "radius": 50.00, "identifier": "우림라이온스"],
+        "판교":["longitude": 127.099662 ,"latitude": 37.395428, "radius": 50.00, "identifier": "판교"],
+        "판교넥스트":["longitude": 127.108589 ,"latitude": 37.401958, "radius": 50.00, "identifier": "판교넥스트"],
+        "아이디어팩토리":["longitude": 127.029412 ,"latitude": 37.497111, "radius": 50.00, "identifier": "아이디어팩토리"]
     ]
     
     lazy var badgeStore: [Badge] = {
